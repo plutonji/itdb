@@ -17,8 +17,8 @@ $trans_showmissing=0;
 /* You don't need to change those */
 /*************************************************************************/
 $dblogsize=1000; /* how many database log entries to keep */
-$uploaddir="$scriptdir/data/files/"; /* how to access uploaded files from filesystem (absolute path, trailing slash)*/
-$uploaddirwww="data/files/"; /* how to access uploaded files from web browser (may be relative)*/
+$uploaddir="images/uploads/"; /* how to access uploaded files from filesystem (absolute path, trailing slash)*/
+$uploaddirwww="images/uploads/"; /* how to access uploaded files from web browser (may be relative)*/
 $dbfile="$scriptdir/data/itdb.db"; /* sqlite db file */
 $demomode=0;
 
