@@ -312,10 +312,16 @@ function countitemsinrack($rackid) {
 }
 
 function delrack($rackid,$dbh) {
-  $sql="UPDATE items set rackid='' where rackid='$rackid'";
+  $sql="UPDATE items SET rackid='' WHERE rackid='$rackid'";
   $sth=db_exec($dbh,$sql);
 
-  $sql="DELETE from racks where id='$rackid'";
+  $sql="DELETE FROM racks WHERE id='$rackid'";
+  $sth=db_exec($dbh,$sql);
+
+  $sql="UPDATE racks SET id=id-1 WHERE id>'$rackid'";
+  $sth=db_exec($dbh,$sql);
+
+  $sql="UPDATE sqlite_sequence SET seq=seq-1 WHERE name='racks'";
   $sth=db_exec($dbh,$sql);
 
 }
